@@ -10,6 +10,7 @@ const geminiApiKey = process.env.GEMINI_API_KEY; // Clave de Gemini
 
 // Ruta para manejar mensajes de WhatsApp
 app.post('/webhook', async (req, res) => {
+  console.log('hola ==>>', req.body.entry[0].changes[0].value.messages[0])
   const message = req.body.entry[0].changes[0].value.messages[0].text.body;
   const from = req.body.entry[0].changes[0].value.messages[0].from;
 
